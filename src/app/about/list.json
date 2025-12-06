@@ -1,5 +1,5 @@
 {
-	"title": "关于本站",
-	"description": "一个基于 Github 的现代化博客系统",
-	"content": "📦网站基于 Github 仓库完全存储，所有内容版本可控\n\n🚀无后端，无 serverless function，纯静态站点\n\n✏️文章通过可视化 UI 直接编辑并提交到 Github 仓库\n\n🔑所有用户都可以编辑，提交需要 Owner 的 Private Key\n\n## 技术栈\n\n- Next.js\n- React\n- TypeScript\n- Tailwind CSS\n- Motion\n- Github API"
+	"title": "关于我",
+	"description": "你好，我是 ckf111 —— 前端开发者、独立创作者，记录技术与生活。",
+	"content": "## 简介\n\n- 喜欢探索 Web 前端与交互动画\n- 热衷于将想法落地为有趣的小产品\n- 坚持写作与知识整理\n\n## 技能\n\n- 前端：React、Next.js、TypeScript、Tailwind CSS\n- 工具：pnpm、Vercel、GitHub Actions\n- 其它：性能优化、组件设计、动效实现\n\n## 兴趣\n\n- 编程、设计、摄影、阅读\n- 观察与记录，做点好玩的东西\n\n## 联系\n\n- 邮箱：example@domain.com\n- 博客主页：/\n\n> 这个页面支持可视化编辑与保存（需要导入私钥），你可以随时更新内容。"
 }
