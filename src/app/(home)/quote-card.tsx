@@ -21,9 +21,11 @@ export default function QuoteCard() {
   const { cardStyles } = useConfigStore()
   const styles = cardStyles.quoteCard
   const hiCardStyles = cardStyles.hiCard
+  const calendarStyles = cardStyles.calendarCard
+  const clockStyles = cardStyles.clockCard
 
   const x = styles.offsetX !== null ? center.x + styles.offsetX : center.x + hiCardStyles.width / 2 + CARD_SPACING
-  const y = styles.offsetY !== null ? center.y + styles.offsetY : center.y - hiCardStyles.height / 2 - styles.height - CARD_SPACING
+  const y = styles.offsetY !== null ? center.y + styles.offsetY : center.y - clockStyles.offset + CARD_SPACING + calendarStyles.height + CARD_SPACING
 
   const [index, setIndex] = useState(() => Math.floor(Math.random() * QUOTES.length))
   const quote = useMemo(() => QUOTES[index], [index])

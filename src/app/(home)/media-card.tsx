@@ -30,9 +30,10 @@ export default function MediaCard() {
   const { cardStyles } = useConfigStore()
   const styles = cardStyles.mediaCard
   const hiCardStyles = cardStyles.hiCard
+  const skillsStyles = cardStyles.skillsCard
 
-  const x = styles.offsetX !== null ? center.x + styles.offsetX : center.x + hiCardStyles.width / 2 + CARD_SPACING
-  const y = styles.offsetY !== null ? center.y + styles.offsetY : center.y + hiCardStyles.height / 2 + CARD_SPACING
+  const x = styles.offsetX !== null ? center.x + styles.offsetX : center.x - hiCardStyles.width / 2 - styles.width - CARD_SPACING
+  const y = styles.offsetY !== null ? center.y + styles.offsetY : center.y + hiCardStyles.height / 2 + CARD_SPACING + skillsStyles.height + CARD_SPACING
 
   return (
     <HomeDraggableLayer cardKey='mediaCard' x={x} y={y} width={styles.width} height={styles.height}>
@@ -57,4 +58,3 @@ export default function MediaCard() {
     </HomeDraggableLayer>
   )
 }
-

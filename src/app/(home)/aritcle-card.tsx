@@ -11,12 +11,11 @@ export default function ArticleCard() {
 	const center = useCenterStore()
 	const { cardStyles } = useConfigStore()
 	const { blog, loading } = useLatestBlog()
-	const styles = cardStyles.articleCard
-	const hiCardStyles = cardStyles.hiCard
-	const socialButtonsStyles = cardStyles.socialButtons
+    const styles = cardStyles.articleCard
+    const hiCardStyles = cardStyles.hiCard
 
-	const x = styles.offsetX !== null ? center.x + styles.offsetX : center.x + hiCardStyles.width / 2 - socialButtonsStyles.width - CARD_SPACING - styles.width
-	const y = styles.offsetY !== null ? center.y + styles.offsetY : center.y + hiCardStyles.height / 2 + CARD_SPACING
+    const x = styles.offsetX !== null ? center.x + styles.offsetX : center.x + hiCardStyles.width / 2 + CARD_SPACING
+    const y = styles.offsetY !== null ? center.y + styles.offsetY : center.y + hiCardStyles.height / 2 + CARD_SPACING
 
 	return (
 		<HomeDraggableLayer cardKey='articleCard' x={x} y={y} width={styles.width} height={styles.height}>
