@@ -4,8 +4,7 @@ import { GITHUB_CONFIG } from '@/consts'
 import { toast } from 'sonner'
 import { fileToBase64NoPrefix } from '@/lib/file-utils'
 import type { SiteContent, CardStyles } from '../stores/config-store'
-import type { FileItem, ArtImageUploads } from '../config-dialog/site-settings'
-import type { BackgroundImageUploads } from '../config-dialog/home-layout'
+import type { FileItem, ArtImageUploads, BackgroundImageUploads } from '../config-dialog/site-settings'
 
 type ArtImageConfig = SiteContent['artImages'][number]
 type BackgroundImageConfig = SiteContent['backgroundImages'][number]
@@ -60,7 +59,8 @@ export async function pushSiteContent(
 
 	// Handle art images upload
 	if (artImageUploads) {
-		for (const [id, item] of Object.entries(artImageUploads)) {
+		const entries = Object.entries(artImageUploads as Record<string, FileItem>) as Array<[string, FileItem]>
+		for (const [id, item] of entries) {
 			if (item.type !== 'file') continue
 
 			const artConfig = siteContent.artImages?.find(art => art.id === id)
@@ -99,7 +99,8 @@ export async function pushSiteContent(
 
 	// Handle background images upload
 	if (backgroundImageUploads) {
-		for (const [id, item] of Object.entries(backgroundImageUploads)) {
+		const entries = Object.entries(backgroundImageUploads as Record<string, FileItem>) as Array<[string, FileItem]>
+		for (const [id, item] of entries) {
 			if (item.type !== 'file') continue
 
 			const bgConfig = siteContent.backgroundImages?.find(bg => bg.id === id)

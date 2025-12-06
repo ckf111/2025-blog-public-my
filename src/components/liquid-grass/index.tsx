@@ -36,7 +36,7 @@ export default function LiquidGrass() {
 			<svg colorInterpolationFilters='sRGB' style={{ display: 'none' }}>
 				<defs>
 					<filter id='magnifying-glass-filter'>
-						<feImage href={displacement1.src} x='0' y='0' width={width} height={height} result='magnifying_displacement_map' />
+						<feImage href={displacement1} x='0' y='0' width={width} height={height} result='magnifying_displacement_map' />
 						<feDisplacementMap
 							in='SourceGraphic'
 							in2='magnifying_displacement_map'
@@ -46,10 +46,10 @@ export default function LiquidGrass() {
 							result='magnified_source'
 						/>
 						<feGaussianBlur in='magnified_source' stdDeviation='0' result='blurred_source' />
-						<feImage href={displacement2.src} x='0' y='0' width={width} height={height} result='displacement_map' />
+						<feImage href={displacement2} x='0' y='0' width={width} height={height} result='displacement_map' />
 						<feDisplacementMap in='blurred_source' in2='displacement_map' scale='80' xChannelSelector='R' yChannelSelector='G' result='displaced' />
 						<feColorMatrix in='displaced' type='saturate' result='displaced_saturated' values='9'></feColorMatrix>
-						<feImage href={borderImg.src} x='0' y='0' width={width} height={height} result='specular_layer'></feImage>
+						<feImage href={borderImg} x='0' y='0' width={width} height={height} result='specular_layer'></feImage>
 						<feComposite in='displaced_saturated' in2='specular_layer' operator='in' result='specular_saturated'></feComposite>
 						<feComponentTransfer in='specular_layer' result='specular_faded'>
 							<feFuncA type='linear' slope='0.5'></feFuncA>
