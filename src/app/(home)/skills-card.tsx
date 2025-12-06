@@ -28,14 +28,14 @@ export default function SkillsCard() {
     <HomeDraggableLayer cardKey='skillsCard' x={x} y={y} width={styles.width} height={styles.height}>
       <Card order={styles.order} width={styles.width} height={styles.height} x={x} y={y} className='space-y-2 max-sm:static'>
         <h2 className='text-secondary text-sm'>技能/栈图</h2>
-        <div className='space-y-2'>
+        <div className='space-y-3'>
           {SKILLS.map((s) => (
             <div key={s.name} className='space-y-1'>
-              <div className='flex justify-between text-xs'>
-                <span>{s.name}</span>
-                <span className='text-secondary'>{s.percent}%</span>
+              <div className='flex justify-between text-xs min-w-0'>
+                <span className='truncate'>{s.name}</span>
+                <span className='text-secondary whitespace-nowrap'>{s.percent}%</span>
               </div>
-              <div className='h-2 w-full rounded bg-gray-200'>
+              <div className='h-2 w-full overflow-hidden rounded bg-gray-200'>
                 <div className='h-2 rounded bg-brand' style={{ width: `${s.percent}%` }} />
               </div>
             </div>

@@ -42,13 +42,13 @@ export default function MediaCard() {
         <ul className='divide-y divide-slate-200'>
           {MEDIA_LIST.map((item) => (
             <li key={item.title} className='py-2 flex items-start gap-3'>
-              <span className='text-lg'>{ICON[item.type]}</span>
-              <div className='flex-1'>
-                <div className='flex items-center justify-between'>
-                  <h3 className='text-sm font-medium'>{item.title}</h3>
-                  <Stars value={item.rating} />
+              <span className='text-lg shrink-0'>{ICON[item.type]}</span>
+              <div className='flex-1 min-w-0'>
+                <div className='flex items-start justify-between gap-2'>
+                  <h3 className='text-sm font-medium truncate'>{item.title}</h3>
+                  <div className='shrink-0 whitespace-nowrap'><Stars value={item.rating} /></div>
                 </div>
-                {item.subtitle && <p className='text-secondary text-xs'>{item.subtitle}</p>}
+                {item.subtitle && <p className='text-secondary text-xs truncate'>{item.subtitle}</p>}
                 {item.note && <p className='text-secondary mt-1 text-xs'>{item.note}</p>}
               </div>
             </li>
