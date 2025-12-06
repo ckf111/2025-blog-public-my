@@ -4,9 +4,6 @@ import HiCard from '@/app/(home)/hi-card'
 import ArtCard from '@/app/(home)/art-card'
 import ClockCard from '@/app/(home)/clock-card'
 import CalendarCard from '@/app/(home)/calendar-card'
-import QuoteCard from '@/app/(home)/quote-card'
-import MediaCard from '@/app/(home)/media-card'
-import SkillsCard from '@/app/(home)/skills-card'
 
 import SocialButtons from '@/app/(home)/social-buttons'
 import ShareCard from '@/app/(home)/share-card'
@@ -64,9 +61,6 @@ export default function Home() {
 				{cardStyles.hiCard?.enabled !== false && <HiCard />}
 				{!maxSM && cardStyles.clockCard?.enabled !== false && <ClockCard />}
 				{!maxSM && cardStyles.calendarCard?.enabled !== false && <CalendarCard />}
-				{cardStyles.quoteCard?.enabled !== false && <QuoteCard />}
-				{!maxSM && cardStyles.mediaCard?.enabled !== false && <MediaCard />}
-				{!maxSM && cardStyles.skillsCard?.enabled !== false && <SkillsCard />}
 
 				{cardStyles.socialButtons?.enabled !== false && <SocialButtons />}
 				{!maxSM && cardStyles.shareCard?.enabled !== false && <ShareCard />}

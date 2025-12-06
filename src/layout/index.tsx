@@ -52,10 +52,10 @@ export default function Layout({ children }: PropsWithChildren) {
 				/>
 			)}
 			<BlurredBubblesBackground colors={siteContent.backgroundColors} regenerateKey={regenerateKey} />
-            <main className='relative z-10 min-h-[2000px]'>
-                {children}
-                <NavCard />
-            </main>
+			<main className='relative z-10 h-full'>
+				{children}
+				<NavCard />
+			</main>
 
 			{maxSM && init && <ScrollTopButton className='bg-brand/20 fixed right-6 bottom-8 z-50 shadow-md' />}
 		</>

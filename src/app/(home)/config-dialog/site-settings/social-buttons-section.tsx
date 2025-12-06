@@ -32,22 +32,22 @@ export function SocialButtonsSection({ formData, setFormData }: SocialButtonsSec
 			order: buttons.length + 1
 		}
 		setFormData(prev => ({
-			...(prev as any),
-			socialButtons: ([...((prev as any).socialButtons || []), newButton] as any)
+			...prev,
+			socialButtons: [...(prev.socialButtons || []), newButton]
 		}))
 	}
 
 	const handleUpdateButton = (id: string, updates: Partial<SocialButtonConfig>) => {
 		setFormData(prev => ({
-			...(prev as any),
-			socialButtons: (((prev as any).socialButtons || []).map((btn: any) => (btn.id === id ? { ...btn, ...updates, label: updates.label ?? btn.label ?? '' } : btn)) as any)
+			...prev,
+			socialButtons: (prev.socialButtons || []).map(btn => (btn.id === id ? { ...btn, ...updates, label: updates.label ?? btn.label ?? '' } : btn))
 		}))
 	}
 
 	const handleRemoveButton = (id: string) => {
 		setFormData(prev => ({
-			...(prev as any),
-			socialButtons: (((prev as any).socialButtons || []).filter((btn: any) => btn.id !== id) as any)
+			...prev,
+			socialButtons: (prev.socialButtons || []).filter(btn => btn.id !== id)
 		}))
 	}
 
@@ -68,8 +68,8 @@ export function SocialButtonsSection({ formData, setFormData }: SocialButtonsSec
 		}))
 
 		setFormData(prev => ({
-			...(prev as any),
-			socialButtons: (updatedButtons as any)
+			...prev,
+			socialButtons: updatedButtons
 		}))
 	}
 
